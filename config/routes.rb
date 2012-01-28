@@ -1,4 +1,6 @@
 Play4Decades::Application.routes.draw do
+  resources :teams
+
   resources :games
 
   #get \"users\/show\"
