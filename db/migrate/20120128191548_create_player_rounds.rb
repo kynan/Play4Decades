@@ -1,6 +1,7 @@
 class CreatePlayerRounds < ActiveRecord::Migration
   def self.up
     create_table :player_rounds do |t|
+      t.integer :player_id
       t.integer :decade
       t.integer :mitigation
       t.integer :adaptation
