@@ -1,0 +1,16 @@
+= form_for @team_round do |f|
+  = f.error_messages
+  %p
+    = f.label :decade
+    %br
+    = f.number_field :decade
+  %p
+    = f.label :temperature
+    %br
+    = f.text_field :temperature
+  %p
+    = f.label :cumulative_global_co2
+    %br
+    = f.text_field :cumulative_global_co2
+  %p
+    = f.submit

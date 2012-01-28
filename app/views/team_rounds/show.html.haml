@@ -1,0 +1,18 @@
+- title "Team Round"
+
+%p
+  %strong Decade:
+  = @team_round.decade
+%p
+  %strong Temperature:
+  = @team_round.temperature
+%p
+  %strong Cumulative Global Co2:
+  = @team_round.cumulative_global_co2
+
+%p
+  = link_to "Edit", edit_team_round_path(@team_round)
+  |
+  = link_to "Destroy", @team_round, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", team_rounds_path

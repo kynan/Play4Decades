@@ -1,4 +1,6 @@
 Play4Decades::Application.routes.draw do
+  resources :team_rounds
+
   resources :player_rounds
 
   resources :admins

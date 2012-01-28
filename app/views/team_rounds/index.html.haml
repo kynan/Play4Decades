@@ -1,0 +1,17 @@
+- title "Team Rounds"
+
+%table
+  %tr
+    %th Decade
+    %th Temperature
+    %th Cumulative global co2
+  - for team_round in @team_rounds
+    %tr
+      %td= team_round.decade
+      %td= team_round.temperature
+      %td= team_round.cumulative_global_co2
+      %td= link_to 'Show', team_round
+      %td= link_to 'Edit', edit_team_round_path(team_round)
+      %td= link_to 'Destroy', team_round, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Team Round", new_team_round_path

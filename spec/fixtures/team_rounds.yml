@@ -1,0 +1,9 @@
+one:
+  decade: 1
+  temperature: 1.5
+  cumulative_global_co2: 1.5
+
+two:
+  decade: 1
+  temperature: 1.5
+  cumulative_global_co2: 1.5
