@@ -33,6 +33,9 @@ class GamesController < ApplicationController
     end
   end
 
+  def join
+  end
+
   def destroy
     @game = Game.find(params[:id])
     @game.destroy

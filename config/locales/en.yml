@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+  game:
+    create: "Create a new game"
+    start: "Start a new game"
+    join: "Join a game"

@@ -4,6 +4,9 @@ Play4Decades::Application.routes.draw do
 
   resources :games do
     resources :teams 
+    member do
+      get 'join'
+    end
   end
 
   resources :teams do
