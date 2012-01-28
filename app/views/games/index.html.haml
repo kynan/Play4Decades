@@ -3,10 +3,12 @@
 %table
   %tr
     %th State
+    %th Current round
     %th Nrounds
   - for game in @games
     %tr
       %td= game.state
+      %td= game.current_round
       %td= game.nrounds
       %td= link_to 'Show', game
       %td= link_to 'Edit', edit_game_path(game)
