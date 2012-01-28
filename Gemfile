@@ -8,16 +8,20 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+group :development do
+  gem "haml-rails", ">= 0.3.4"
+  gem "nifty-generators"
+end
+group :test do
+  gem "factory_girl_rails", ">= 1.4.0"
+  gem "database_cleaner", ">= 0.7.0"
+  gem "capybara", ">= 1.1.2"
+  gem "launchy", ">= 2.0.5"
+  gem "cucumber-rails", ">= 1.2.0"
+  gem "mocha"
+end
 gem 'jquery-rails'
 gem "haml", ">= 3.1.2"
-gem "haml-rails", ">= 0.3.4", :group => :development
-gem "rspec-rails", ">= 2.8.0.rc1", :group => [:development, :test]
-gem "factory_girl_rails", ">= 1.4.0", :group => :test
-gem "cucumber-rails", ">= 1.2.0", :group => :test
-gem "capybara", ">= 1.1.2", :group => :test
-gem "database_cleaner", ">= 0.7.0", :group => :test
-gem "launchy", ">= 2.0.5", :group => :test
 gem "devise", ">= 1.5.0"
-gem "nifty-generators", :group => :development
+gem "rspec-rails", ">= 2.8.0.rc1", :group => [:development, :test]
 
-gem "mocha", :group => :test
