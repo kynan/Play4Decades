@@ -1,15 +1,19 @@
 Play4Decades::Application.routes.draw do
-  resources :team_rounds
-
-  resources :player_rounds
 
   resources :admins
 
-  resources :players
+  resources :games do
+    resources :teams 
+  end
 
-  resources :teams
+   resources :teams do
+     resources :team_rounds
+     resources :players 
+    end
 
-  resources :games
+   resources :players do
+     resources :player_rounds
+   end
 
   #get \"users\/show\"
 

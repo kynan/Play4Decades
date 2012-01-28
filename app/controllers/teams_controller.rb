@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   def index
-    @teams = Team.all
+    @teams = Game.find(params['game_id']).teams
   end
 
   def show
@@ -8,11 +8,12 @@ class TeamsController < ApplicationController
   end
 
   def new
+    game = Game.find(params['game_id'])
     @team = Team.new
   end
 
   def create
-    @team = Team.new(params[:team])
+    @team = Team.new(params[:team], :game => Game.find(params['game_id']))
     if @team.save
       redirect_to @team, :notice => "Successfully created team."
     else

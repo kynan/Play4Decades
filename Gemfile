@@ -11,6 +11,7 @@ end
 group :development do
   gem "haml-rails", ">= 0.3.4"
   gem "nifty-generators"
+  gem 'ruby-debug19'
 end
 group :test do
   gem "factory_girl_rails", ">= 1.4.0"
