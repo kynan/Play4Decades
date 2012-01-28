@@ -1,0 +1,30 @@
+- title "Player Round"
+
+%p
+  %strong Decade:
+  = @player_round.decade
+%p
+  %strong Mitigation:
+  = @player_round.mitigation
+%p
+  %strong Adaptation:
+  = @player_round.adaptation
+%p
+  %strong Gross National Income:
+  = @player_round.gross_national_income
+%p
+  %strong Residual Emissions:
+  = @player_round.residual_emissions
+%p
+  %strong Baseline Damage:
+  = @player_round.baseline_damage
+%p
+  %strong Residual Damage:
+  = @player_round.residual_damage
+
+%p
+  = link_to "Edit", edit_player_round_path(@player_round)
+  |
+  = link_to "Destroy", @player_round, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", player_rounds_path

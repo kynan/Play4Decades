@@ -1,0 +1,32 @@
+= form_for @player_round do |f|
+  = f.error_messages
+  %p
+    = f.label :decade
+    %br
+    = f.number_field :decade
+  %p
+    = f.label :mitigation
+    %br
+    = f.number_field :mitigation
+  %p
+    = f.label :adaptation
+    %br
+    = f.number_field :adaptation
+  %p
+    = f.label :gross_national_income
+    %br
+    = f.text_field :gross_national_income
+  %p
+    = f.label :residual_emissions
+    %br
+    = f.text_field :residual_emissions
+  %p
+    = f.label :baseline_damage
+    %br
+    = f.text_field :baseline_damage
+  %p
+    = f.label :residual_damage
+    %br
+    = f.text_field :residual_damage
+  %p
+    = f.submit

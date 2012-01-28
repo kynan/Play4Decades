@@ -1,0 +1,17 @@
+one:
+  decade: 1
+  mitigation: 1
+  adaptation: 1
+  gross_national_income: 1.5
+  residual_emissions: 1.5
+  baseline_damage: 1.5
+  residual_damage: 1.5
+
+two:
+  decade: 1
+  mitigation: 1
+  adaptation: 1
+  gross_national_income: 1.5
+  residual_emissions: 1.5
+  baseline_damage: 1.5
+  residual_damage: 1.5
