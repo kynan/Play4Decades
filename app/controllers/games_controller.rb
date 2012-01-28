@@ -36,6 +36,17 @@ class GamesController < ApplicationController
   def join
   end
 
+  def new_round
+    @game = Game.find(params[:id])
+    @game.teams.each do |t|
+      TeamRound.create!(:team => t)
+      t.players.each do |p|
+        PlayerRound.create!(:player => p)
+      end
+    end
+    redirect_to @game, :notice => "Successfully advanced to next round."
+  end
+
   def destroy
     @game = Game.find(params[:id])
     @game.destroy

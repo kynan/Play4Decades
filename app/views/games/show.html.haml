@@ -13,6 +13,8 @@
 %p
   = link_to "Edit", edit_game_path(@game)
   |
+  = link_to 'New round', new_round_game_path(@game)
+  |
   = link_to "Destroy", @game, :confirm => 'Are you sure?', :method => :delete
   |
   = link_to "View All", games_path

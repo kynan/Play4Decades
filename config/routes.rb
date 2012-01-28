@@ -6,6 +6,7 @@ Play4Decades::Application.routes.draw do
     resources :teams 
     member do
       get 'join'
+      get 'new_round'
     end
   end
 

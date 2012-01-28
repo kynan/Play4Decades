@@ -12,6 +12,7 @@
       %td= game.nrounds
       %td= link_to 'Show', game
       %td= link_to 'Edit', edit_game_path(game)
+      %td= link_to 'New round', new_round_game_path(game)
       %td= button_to "Delete", game, :method=>:delete, :class=>:destroy, :confirm => 'Are you sure?'
 
 %p= link_to "New Game", new_game_path
