@@ -1,0 +1,7 @@
+one:
+  state: MyString
+  nrounds: 1
+
+two:
+  state: MyString
+  nrounds: 1

@@ -95,8 +95,12 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.17.2)
+    mocha (0.10.3)
+      metaclass (~> 0.0.1)
     multi_json (1.0.4)
+    nifty-generators (0.4.6)
     nokogiri (1.5.0)
     orm_adapter (0.0.6)
     polyglot (0.3.3)
@@ -183,6 +187,8 @@ DEPENDENCIES
   haml-rails (>= 0.3.4)
   jquery-rails
   launchy (>= 2.0.5)
+  mocha
+  nifty-generators
   rails (= 3.2.1)
   rspec-rails (>= 2.8.0.rc1)
   sass-rails (~> 3.2.3)

@@ -1,0 +1,15 @@
+- title "Games"
+
+%table
+  %tr
+    %th State
+    %th Nrounds
+  - for game in @games
+    %tr
+      %td= game.state
+      %td= game.nrounds
+      %td= link_to 'Show', game
+      %td= link_to 'Edit', edit_game_path(game)
+      %td= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Game", new_game_path

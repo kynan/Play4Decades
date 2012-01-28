@@ -1,0 +1,15 @@
+- title "Game"
+
+%p
+  %strong State:
+  = @game.state
+%p
+  %strong Nrounds:
+  = @game.nrounds
+
+%p
+  = link_to "Edit", edit_game_path(@game)
+  |
+  = link_to "Destroy", @game, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", games_path
