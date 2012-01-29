@@ -8,6 +8,6 @@
       %td= team.name
       %td= link_to 'Show', team
       %td= link_to 'Edit', edit_team_path(team)
-      %td= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete
+      %td= button_to "Delete", team, :method=>:delete, :class=>:destroy, :confirm => 'Are you sure?'
 
 %p= link_to "New Team", new_game_team_path
