@@ -11,12 +11,12 @@
   %p
     = f.label :gross_national_income
     %br
-    = f.text_field :gross_national_income, :disabled => true
+    = @player.gross_national_income(@game.current_round-2)
   %p
     = f.label :residual_emissions, :disabled => true
 
     %br
-    = f.text_field :residual_emissions, :disabled => true
+    = @player.residual_emissions(@game.current_round-2)
 
   %p
     = f.submit

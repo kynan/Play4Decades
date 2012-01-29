@@ -20,11 +20,8 @@ class Team < ActiveRecord::Base
   end
 
   def cumulativeGlobalCO2(decade)
-    # Return precomputed value if already in database 
-    require 'ruby-debug'
-    debugger
-    if not round(decade).cumulative_global_co2.nil?
-      return round(decade).cumulative_global_co2
+    if decade == -1
+      return 0.0
     end
 
     cumulativeGlobalCO2 = cumulativeGlobalCO2(decade-1)
@@ -35,24 +32,16 @@ class Team < ActiveRecord::Base
         cumulativeGlobalCO2 += alpha*player.residual_emissions(decade) + (1-alpha)*player.residual_emissions(decade)
       end
     end
-
-    # Update the database 
-    round(decade).update_attribute(:cumulative_global_co2, cumulativeGlobalCO2)
     return cumulativeGlobalCO2
   end
 
   def temperature(decade)
-    # Return precomputed value if already in database 
-    if not round(decade).temperature.nil?
-      return round(decade).temperature
+    if decade == -1
+      return 0.0
     end
 
     constTempIncreasePerCO2 = 0.004;
-    temperature = self.cumulativeGlobalCO2(decade) * constTempIncreasePerCO2
-
-    # Update the database 
-    round(decade).update_attribute(:temperature, temperature)
-    return temperature
+    self.cumulativeGlobalCO2(decade) * constTempIncreasePerCO2
   end
 
 end
