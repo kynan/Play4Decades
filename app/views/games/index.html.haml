@@ -2,11 +2,13 @@
 
 %table
   %tr
+    %th= t('token')
     %th State
     %th Current round
     %th Nrounds
   - for @game in @games
     %tr
+      %td= @game.token
       %td= @game.state
       %td= @game.current_round
       %td= @game.nrounds

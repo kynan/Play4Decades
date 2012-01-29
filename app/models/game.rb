@@ -1,6 +1,7 @@
 class Game < ActiveRecord::Base
   has_many :teams
   has_one :admin
+  validates_uniqueness_of :token
 
   def current_round
     # FIXME: Do this in a nicer way
