@@ -8,10 +8,10 @@ class Game < ActiveRecord::Base
   end
 
   def current_year
-    current_round*10+2010
+    2010+(current_round-1)*10
   end
 
-  def next_decade
+  def forcast_year 
     current_year+10
   end
 end

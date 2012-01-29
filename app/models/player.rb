@@ -17,7 +17,7 @@ class Player < ActiveRecord::Base
 
     constGlobalCO2GrowthPerYear = 0.5
 
-    players_per_team = 4.0 # team.players.count
+    players_per_team = team.players.count
     residual_emissions(decade-1) + 10*constGlobalCO2GrowthPerYear/players_per_team - round(decade).mitigation
   end
 
