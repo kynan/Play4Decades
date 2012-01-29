@@ -13,7 +13,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(params[:game])
-    @game.token = rand(36**8).to_s(36)
+    @game.token = rand(36**8).to_s(36)[0..3]
     if @game.save
       # Create two default teams
       @team1 = Team.new(:name => 'Alpha Centauri')
