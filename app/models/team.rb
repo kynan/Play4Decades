@@ -12,11 +12,11 @@ class Team < ActiveRecord::Base
   end
 
   def global_emissions(decade) 
-    emission = 0
+    emissions = 0
     players.each do |player|
-     emission += player.residual_emission(decade)
+     emissions += player.residual_emissions(decade)
     end
-    return emission
+    return emissions
   end
 
   def cumulativeGlobalCO2(decade)

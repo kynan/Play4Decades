@@ -10,20 +10,20 @@ class Player < ActiveRecord::Base
     player_rounds[decade]
   end
 
-  def residual_emission(decade)
+  def residual_emissions(decade)
     # Return precomputed value if already in database
-    if not round(decade).residual_emission.nil?
-      return round(decade).residual_emission
+    if not round(decade).residual_emissions.nil?
+      return round(decade).residual_emissions
     end
 
     constGlobalCO2GrowthPerYear = 0.5
 
     players_per_team = team.players.count
-    residual_emission = round(decade-1).residual_emission + 10*constGlobalCO2GrowthPerYear/players_per_team - round(decade).mitigation
+    residual_emissions = round(decade-1).residual_emissions + 10*constGlobalCO2GrowthPerYear/players_per_team - round(decade).mitigation
 
     # Update the database
-    round(decade).update_attribute(:residual_emission => residual_emission)
-    return residual_emission
+    round(decade).update_attribute(:residual_emissions => residual_emissions)
+    return residual_emissions
   end
 
   def costOfMitigation(mitigation)
