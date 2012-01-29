@@ -14,7 +14,15 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(params[:game])
     if @game.save
-      redirect_to @game, :notice => "Successfully created game."
+      # Create two default teams
+      @team1 = Team.new(:name => 'Alpha Centauri')
+      @team1.game = @game
+      @team1.save
+      @team2 = Team.new(:name => 'Betelgeuse')
+      @team2.game = @game 
+      @team2.save
+
+      redirect_to game_team_path(@game), :notice => "Successfully created game."
     else
       render :action => 'new'
     end
