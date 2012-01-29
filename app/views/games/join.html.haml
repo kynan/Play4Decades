@@ -1,6 +1,6 @@
 - title "Join Game"
 
 = form_tag("authorize", :method => "post") do
-  = label_tag(:id, t('token'))
-  = text_field_tag(:id)
+  = label_tag(:token, t('token'))
+  = text_field_tag(:token)
   = submit_tag(t('join'))

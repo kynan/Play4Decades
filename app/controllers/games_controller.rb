@@ -13,6 +13,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(params[:game])
+    @game.token = rand(36**8).to_s(36)
     if @game.save
       # Create two default teams
       @team1 = Team.new(:name => 'Alpha Centauri')
@@ -45,9 +46,13 @@ class GamesController < ApplicationController
   end
 
   def authorize
-    @game = Game.find(params[:id])
+    @game = Game.where(:token => params[:token], :state => 'new').first
     # FIXME: check that game isn't full etc.
-    redirect_to browse_game_teams_path(@game), :notice  => "Successfully joined game."
+    if @game
+      redirect_to browse_game_teams_path(@game), :notice  => "Successfully joined game."
+    else
+      redirect_to join_games_path, :alert => "There is no open game with that id."
+    end
   end
 
   def new_round
