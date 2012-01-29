@@ -5,14 +5,14 @@
     %th State
     %th Current round
     %th Nrounds
-  - for game in @games
+  - for @game in @games
     %tr
-      %td= game.state
-      %td= game.current_round
-      %td= game.nrounds
-      %td= link_to 'Show', game
-      %td= link_to 'Edit', edit_game_path(game)
-      %td= link_to 'New round', new_round_game_path(game)
-      %td= button_to "Delete", game, :method=>:delete, :class=>:destroy, :confirm => 'Are you sure?'
+      %td= @game.state
+      %td= @game.current_round
+      %td= @game.nrounds
+      %td
+        = link_to 'Show', @game
+        |
+        = render 'games/links'
 
 %p= link_to "New Game", new_game_path

@@ -1,0 +1,12 @@
+= link_to "Edit", edit_game_path(@game)
+|
+= link_to 'New round', new_round_game_path(@game)
+|
+= link_to "Delete", @game, :confirm => 'Are you sure?', :class=>:destroy, :method => :delete
+|
+= link_to "View All", games_path
+|
+= link_to "Show Teams", game_teams_path(@game)
+|
+= link_to "New Team", new_game_team_path(@game)
+

@@ -23,8 +23,4 @@
   = @player_round.residual_damage
 
 %p
-  = link_to "Edit", edit_player_round_path(@player_round)
-  |
-  = link_to "Destroy", @player_round, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", player_rounds_path
+  = render 'player_rounds/links'

@@ -3,11 +3,12 @@
 %table
   %tr
     %th Name
-  - for team in @teams
+  - for @team in @teams
     %tr
-      %td= team.name
-      %td= link_to 'Show', team
-      %td= link_to 'Edit', edit_team_path(team)
-      %td= button_to "Delete", team, :method=>:delete, :class=>:destroy, :confirm => 'Are you sure?'
+      %td= @team.name
+      %td
+        = link_to 'Show', @team
+        |
+        = render 'teams/links'
 
 %p= link_to "New Team", new_game_team_path
