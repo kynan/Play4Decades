@@ -1,5 +1,9 @@
-- title "Teams"
+%h1 Join token 
 
+%p= 'Give this token to all players: '
+%h2= @teams.first.game.token 
+
+%h1 Teams
 %table
   %tr
     %th Name
