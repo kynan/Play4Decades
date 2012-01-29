@@ -1,6 +1,21 @@
 - title "Edit Player Round"
 
+= @game.current_year.to_s
 = render 'form'
+
+= @game.next_decade.to_s
+
+%p Emissions
+
+
+%p Warming 
+= @team.temperature(@game.current_round-1)
+
+%p Baseline Damage 
+
+%p Residual Damage 
+
+%p Income 
 
 %p
   = link_to "Show", player_player_round_path(@player_round.player, @player_round)

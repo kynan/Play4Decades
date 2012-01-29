@@ -22,6 +22,9 @@ class PlayerRoundsController < ApplicationController
 
   def edit
     @player_round = PlayerRound.find(params[:id])
+    @player = @player_round.player 
+    @team = @player.team
+    @game = @team.game
   end
 
   def update
