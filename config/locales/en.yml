@@ -8,3 +8,5 @@ en:
     join: "Join a game"
     nrounds: "Number of rounds"
     start: "Start a new game"
+  join: "Join"
+  token: "Session id"

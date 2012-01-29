@@ -36,6 +36,12 @@ class GamesController < ApplicationController
   def join
   end
 
+  def authorize
+    @game = Game.find(params[:id])
+    # FIXME: check that game isn't full etc.
+    redirect_to browse_game_teams_path(@game), :notice  => "Successfully joined game."
+  end
+
   def new_round
     @game = Game.find(params[:id])
     @game.teams.each do |t|

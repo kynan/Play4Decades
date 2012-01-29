@@ -3,6 +3,11 @@ class TeamsController < ApplicationController
     @teams = Game.find(params['game_id']).teams
   end
 
+  def browse
+    # FIXME: Only list teams that are available
+    @teams = Game.find(params['game_id']).teams
+  end
+
   def show
     @team = Team.find(params[:id])
   end
@@ -40,5 +45,9 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     @team.destroy
     redirect_to teams_url, :notice => "Successfully destroyed team."
+  end
+
+  def join
+    @team = Team.find(params[:id])
   end
 end

@@ -3,14 +3,24 @@ Play4Decades::Application.routes.draw do
   resources :admins
 
   resources :games do
-    resources :teams 
-    member do
+    collection do
       get 'join'
+      post 'authorize'
+    end
+    member do
       get 'new_round'
+    end
+    resources :teams do
+      collection do
+        get 'browse'
+      end
     end
   end
 
   resources :teams do
+    member do
+      get 'join'
+    end
     resources :team_rounds
     resources :players 
   end
