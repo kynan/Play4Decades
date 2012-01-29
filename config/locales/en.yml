@@ -13,4 +13,4 @@ en:
   name: "Name"
   team:
     available: "Available Teams"
-  token: "Session id"
+  token: "Game code"
