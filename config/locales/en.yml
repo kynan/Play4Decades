@@ -9,4 +9,7 @@ en:
     nrounds: "Number of rounds"
     start: "Start a new game"
   join: "Join"
+  name: "Name"
+  team:
+    available: "Available Teams"
   token: "Session id"

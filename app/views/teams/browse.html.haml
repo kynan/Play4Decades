@@ -1,0 +1,10 @@
+- title t 'team.available'
+
+%table
+  %tr
+    %th= t 'name'
+  - for @team in @teams
+    %tr
+      %td= @team.name
+      %td
+        = link_to t('join'), join_team_path(@team)
