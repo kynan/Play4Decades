@@ -3,8 +3,8 @@ class CreateTeamRounds < ActiveRecord::Migration
     create_table :team_rounds do |t|
       t.integer :team_id
       t.integer :decade
-      t.float :temperature
-      t.float :cumulative_global_co2
+      t.float :temperature, :default => 0.0
+      t.float :cumulative_global_co2, :default => 0.0
       t.timestamps
     end
   end

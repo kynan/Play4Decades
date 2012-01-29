@@ -5,8 +5,8 @@ class CreatePlayerRounds < ActiveRecord::Migration
       t.integer :decade
       t.integer :mitigation, :default => 0
       t.integer :adaptation, :default => 0
-      t.float :gross_national_income
-      t.float :residual_emissions
+      t.float :gross_national_income, :default => 17.5
+      t.float :residual_emissions, :default => 8.0
       t.float :baseline_damage
       t.float :residual_damage
       t.timestamps
