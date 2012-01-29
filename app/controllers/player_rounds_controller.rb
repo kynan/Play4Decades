@@ -23,6 +23,7 @@ class PlayerRoundsController < ApplicationController
   def edit
     @player_round = PlayerRound.find(params[:id])
     @player = @player_round.player 
+    @current_round = @player.current_round
     @team = @player.team
     @game = @team.game
     render :layout => 'player'
