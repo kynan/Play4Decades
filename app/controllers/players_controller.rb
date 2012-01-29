@@ -42,5 +42,10 @@ class PlayersController < ApplicationController
   end
 
   def stats
+    @player = Player.find(params[:id])
+    @current_round = @player.current_round()
+    if @current_round
+      redirect_to edit_player_player_round_path(@player, @current_round)
+    end
   end
 end
