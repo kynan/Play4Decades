@@ -37,6 +37,7 @@ body{
   padding:0;
   margin:0;
   overflow:hidden;
+  background-repeat:no-repeat;
 /*  background-image: url('bg_main.png');
   background-image: url('bg_main_with_dummies.png');
   background-image: url('bg_wait_start.png');
