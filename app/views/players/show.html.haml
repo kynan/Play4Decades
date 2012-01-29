@@ -9,4 +9,4 @@
   |
   = link_to "Destroy", @player, :confirm => 'Are you sure?', :method => :delete
   |
-  = link_to "View All", players_path
+  = link_to "View All", team_players_path(@player.team)

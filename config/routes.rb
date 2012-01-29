@@ -6,14 +6,14 @@ Play4Decades::Application.routes.draw do
     resources :teams 
   end
 
-   resources :teams do
-     resources :team_rounds
-     resources :players 
-    end
+  resources :teams do
+    resources :team_rounds
+    resources :players 
+  end
 
-   resources :players do
-     resources :player_rounds
-   end
+  resources :players do
+    resources :player_rounds
+  end
 
   #get \"users\/show\"
 

@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.all
+    @players = Team.find(params['team_id']).players
   end
 
   def show
@@ -9,12 +9,14 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
+    @player.team = Team.find(params['team_id'])
   end
 
   def create
     @player = Player.new(params[:player])
+    @player.team = Team.find(params['team_id'])
     if @player.save
-      redirect_to @player, :notice => "Successfully created player."
+      redirect_to player_path(@player), :notice => "Successfully created player."
     else
       render :action => 'new'
     end
