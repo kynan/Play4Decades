@@ -1,11 +1,7 @@
 = form_for @game do |f|
   = f.error_messages
   %p
-    = f.label :state
-    %br
-    = f.text_field :state
-  %p
-    = f.label :nrounds
+    = f.label t 'game.nrounds'
     %br
     = f.number_field :nrounds
   %p
