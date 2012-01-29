@@ -3,8 +3,8 @@ class CreatePlayerRounds < ActiveRecord::Migration
     create_table :player_rounds do |t|
       t.integer :player_id
       t.integer :decade
-      t.integer :mitigation
-      t.integer :adaptation
+      t.integer :mitigation, :default => 0
+      t.integer :adaptation, :default => 0
       t.float :gross_national_income
       t.float :residual_emissions
       t.float :baseline_damage
