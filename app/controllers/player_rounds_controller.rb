@@ -25,6 +25,7 @@ class PlayerRoundsController < ApplicationController
     @player = @player_round.player 
     @team = @player.team
     @game = @team.game
+    render :layout => 'player'
   end
 
   def update
