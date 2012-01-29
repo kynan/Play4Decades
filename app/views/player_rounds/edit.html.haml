@@ -1,20 +1,57 @@
-= @game.current_year.to_s
-= render 'form'
 
-= @game.forcast_year.to_s
+%div{:class => "value", :id => "income-now"} 
+  = '%.1f' % @player.gross_national_income(@game.current_round-2) 
 
-%p Emissions
-= @team.global_emissions(@game.current_round-1)
+%div{:class => "value", :id => "emissions-now"} 
+  = '%.1f' % @team.global_emissions(@game.current_round-2) 
 
-%p Warming 
-= @team.temperature(@game.current_round-1)
+%div{:class => "value", :id => "mitigation"} 
+  = '%.f' % @player_round.mitigation
 
-%p Baseline Damage 
-= @player.baseline_damage(@game.current_round-1)
+%div{:class => "value", :id => "adaptation"} 
+  = '%.f' % @player_round.adaptation
 
-%p Residual Damage 
-= @player.residual_damage(@game.current_round-1)
+%div{:class => "forecastvalue", :id => "emissions-later"} 
+  = '%.1f' % @team.global_emissions(@game.current_round-1) 
 
-%p Income 
-= @player.gross_national_income(@game.current_round-1)
+%div{:class => "forecastvalue", :id => "warming"} 
+  = '%.1f' % @team.temperature(@game.current_round-1) 
 
+%div{:class => "forecastvalue", :id => "baseline-damage"} 
+  = '%.1f' % @player.baseline_damage(@game.current_round-1)
+
+%div{:class => "forecastvalue", :id => "residual-damage"} 
+  = '%.1f' % @player.residual_damage(@game.current_round-1) 
+
+%div{:class => "forecastvalue", :id => "income-later"} 
+  = '%.1f' % @player.gross_national_income(@game.current_round-1) 
+
+%div{:class => "yearvalue", :id => "year-now"} 
+  = @game.current_year.to_s 
+
+%div{:class => "yearvalue", :id => "year-later"} 
+  = @game.forcast_year.to_s 
+
+%div{:class => "plusminusbutton", :id => "miti-plus"} 
+  = form_for [@player_round.player, @player_round] do |f|
+    = f.error_messages
+    = f.hidden_field :mitigation, :value => @player_round.mitigation+1
+    = f.submit '+1'
+
+%div{:class => "plusminusbutton", :id => "miti-minus"} 
+  = form_for [@player_round.player, @player_round] do |f|
+    = f.error_messages
+    = f.hidden_field :mitigation, :value => @player_round.mitigation-1
+    = f.submit '-1'
+
+%div{:class => "plusminusbutton", :id => "adap-plus"} 
+  = form_for [@player_round.player, @player_round] do |f|
+    = f.error_messages
+    = f.hidden_field :adaptation, :value => @player_round.adaptation+1
+    = f.submit '+1'
+
+%div{:class => "plusminusbutton", :id => "adap-minus"} 
+  = form_for [@player_round.player, @player_round] do |f|
+    = f.error_messages
+    = f.hidden_field :adaptation, :value => @player_round.adaptation-1
+    = f.submit '-1'
