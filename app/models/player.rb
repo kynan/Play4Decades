@@ -57,10 +57,10 @@ class Player < ActiveRecord::Base
     constDamagePercentPerDegree = 5.714285714
 
     damagePercentOfGNI = constDamagePercentPerDegree * team.temperature(decade)
-    baseline_damage = max(0, predamageGNI(decade)*damagePercentOfGNI/100);
+    baseline_damage = [0, predamageGNI(decade)*damagePercentOfGNI/100].max
 
     # Update the database
-    round(decade).update_attribute(:baseline_damage => baseline_damage)
+    round(decade).update_attribute(:baseline_damage, baseline_damage)
     return baseline_damage
   end
 
@@ -70,10 +70,10 @@ class Player < ActiveRecord::Base
         return round(decade).residual_damage
     end
 
-    residual_damage = max(0, baseline_damage(decade) - round(decade).adaptation*efficiencyOfAdaptation(team.temperature(decade)))
+    residual_damage = [0, baseline_damage(decade) - round(decade).adaptation*efficiencyOfAdaptation(team.temperature(decade))].max
 
     # Update the database
-    round(decade).update_attribute(:residual_damage => residual_damage)
+    round(decade).update_attribute(:residual_damage, residual_damage)
     return residual_damage
   end
 
@@ -86,7 +86,7 @@ class Player < ActiveRecord::Base
     gross_national_income = predamageGNI(decade) - residual_damage(decade) - round(decade).adaptation
 
     # Update the database
-    round(decade).update_attribute(:gross_national_income => gross_national_income)
+    round(decade).update_attribute(:gross_national_income, gross_national_income)
     return gross_national_income
   end
 

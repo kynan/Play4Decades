@@ -1,10 +1,6 @@
 = form_for [@player_round.player, @player_round] do |f|
   = f.error_messages
   %p
-    = f.label :decade
-    %br
-    = f.number_field :decade
-  %p
     = f.label :mitigation
     %br
     = f.number_field :mitigation
@@ -15,18 +11,12 @@
   %p
     = f.label :gross_national_income
     %br
-    = f.text_field :gross_national_income
+    = f.text_field :gross_national_income, :disabled => true
   %p
-    = f.label :residual_emissions
+    = f.label :residual_emissions, :disabled => true
+
     %br
-    = f.text_field :residual_emissions
-  %p
-    = f.label :baseline_damage
-    %br
-    = f.text_field :baseline_damage
-  %p
-    = f.label :residual_damage
-    %br
-    = f.text_field :residual_damage
+    = f.text_field :residual_emissions, :disabled => true
+
   %p
     = f.submit
