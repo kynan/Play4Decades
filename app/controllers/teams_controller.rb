@@ -49,5 +49,7 @@ class TeamsController < ApplicationController
 
   def join
     @team = Team.find(params[:id])
+    @player = Player.create(:team => @team)
+    redirect_to stats_player_path(@player), :notice => "Successfully joined team."
   end
 end
