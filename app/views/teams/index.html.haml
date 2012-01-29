@@ -8,7 +8,7 @@
       %td= @team.name
       %td
         = render 'teams/links'
-      %tr Players:
+        = 'Number of players:' + @team.players.count.to_s
       
 
 %p= link_to "New Team", new_game_team_path
