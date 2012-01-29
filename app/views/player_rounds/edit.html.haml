@@ -3,6 +3,6 @@
 = render 'form'
 
 %p
-  = link_to "Show", @player_round
+  = link_to "Show", player_player_round_path(@player_round.player, @player_round)
   |
-  = link_to "View All", player_rounds_path
+  = link_to "View All", player_player_rounds_path(@player_round.player)

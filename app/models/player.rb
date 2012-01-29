@@ -2,6 +2,10 @@ class Player < ActiveRecord::Base
   belongs_to :team
   has_many :player_rounds
 
+  def current_round()
+    player_rounds.last
+  end
+
   def round(decade)
     player_rounds[decade]
   end

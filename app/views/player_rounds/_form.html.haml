@@ -1,4 +1,4 @@
-= form_for @player_round do |f|
+= form_for [@player_round.player, @player_round] do |f|
   = f.error_messages
   %p
     = f.label :decade
