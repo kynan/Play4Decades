@@ -8,5 +8,9 @@ en:
     join: "Join a game"
     nrounds: "Number of rounds"
     start: "Start a new game"
+    waiting_to_begin: "Waiting for the game to start..."
   join: "Join"
+  name: "Name"
+  team:
+    available: "Available Teams"
   token: "Session id"

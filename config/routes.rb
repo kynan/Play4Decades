@@ -26,6 +26,9 @@ Play4Decades::Application.routes.draw do
   end
 
   resources :players do
+    member do
+      get 'stats'
+    end
     resources :player_rounds
   end
 

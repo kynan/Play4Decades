@@ -40,4 +40,7 @@ class PlayersController < ApplicationController
     @player.destroy
     redirect_to players_url, :notice => "Successfully destroyed player."
   end
+
+  def stats
+  end
 end
