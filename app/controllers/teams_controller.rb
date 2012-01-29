@@ -9,13 +9,15 @@ class TeamsController < ApplicationController
 
   def new
     game = Game.find(params['game_id'])
-    @team = Team.new
+    @team = Team.new()
+    @team.game = game
   end
 
   def create
-    @team = Team.new(params[:team], :game => Game.find(params['game_id']))
+    @team = Team.new(params[:team])
+    @team.game = Game.find(params['game_id'])
     if @team.save
-      redirect_to @team, :notice => "Successfully created team."
+      redirect_to team_path(@team), :notice => "Successfully created team."
     else
       render :action => 'new'
     end
