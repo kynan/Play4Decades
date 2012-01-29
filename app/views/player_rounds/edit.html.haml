@@ -4,7 +4,7 @@
   = '%.1f' % @player.gross_national_income(@game.current_round-2) 
 
 %div{:class => "value", :id => "emissions-now"} 
-  = '%.1f' % @player.residual_emissions@game.current_round-2) 
+  = '%.1f' % @player.residual_emissions(@game.current_round-2) 
 
 %div{:class => "value", :id => "mitigation"} 
   = '%.f' % @current_round.mitigation
