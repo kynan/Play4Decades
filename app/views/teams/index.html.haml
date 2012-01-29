@@ -15,4 +15,10 @@
         = 'Number of players:' + @team.players.count.to_s
       
 
-%p= link_to "New Team", new_game_team_path
+%p
+  = link_to "New Team", new_game_team_path
+  |
+  - if @team.game.state == 'new'
+    = link_to "Start Game", start_game_path(@team.game)
+  - else
+    = link_to 'New round', new_round_game_path(@team.game)

@@ -55,6 +55,13 @@ class GamesController < ApplicationController
     end
   end
 
+  def start
+    @game = Game.find(params[:id])
+    @game.state = 'running'
+    @game.save!
+    redirect_to new_round_game_path(@game), :notice => "Game is starting"
+  end
+
   def new_round
     @game = Game.find(params[:id])
     @game.teams.each do |t|

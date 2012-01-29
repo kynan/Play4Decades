@@ -8,6 +8,7 @@ Play4Decades::Application.routes.draw do
       post 'authorize'
     end
     member do
+      get 'start'
       get 'new_round'
     end
     resources :teams do

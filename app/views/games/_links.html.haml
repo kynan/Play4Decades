@@ -1,6 +1,9 @@
 = link_to "Edit", edit_game_path(@game)
 |
-= link_to 'New round', new_round_game_path(@game)
+- if @game.state == 'new'
+  = link_to "Start Game", start_game_path(@game)
+- else
+  = link_to 'New round', new_round_game_path(@game)
 |
 = link_to "Delete", @game, :confirm => 'Are you sure?', :class=>:destroy, :method => :delete
 |
