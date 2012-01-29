@@ -9,17 +9,18 @@
     %th Residual emissions
     %th Baseline damage
     %th Residual damage
-  - for player_round in @player_rounds
+  - for @player_round in @player_rounds
     %tr
-      %td= player_round.decade
-      %td= player_round.mitigation
-      %td= player_round.adaptation
-      %td= player_round.gross_national_income
-      %td= player_round.residual_emissions
-      %td= player_round.baseline_damage
-      %td= player_round.residual_damage
-      %td= link_to 'Show', player_round
-      %td= link_to 'Edit', edit_player_round_path(player_round)
-      %td= link_to 'Destroy', player_round, :confirm => 'Are you sure?', :method => :delete
+      %td= @player_round.decade
+      %td= @player_round.mitigation
+      %td= @player_round.adaptation
+      %td= @player_round.gross_national_income
+      %td= @player_round.residual_emissions
+      %td= @player_round.baseline_damage
+      %td= @player_round.residual_damage
+      %td
+        = link_to 'Show', @player_round
+        |
+        = render 'player_rounds/links'
 
 %p= link_to "New Player Round", new_player_round_path
