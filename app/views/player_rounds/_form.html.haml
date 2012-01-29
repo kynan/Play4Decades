@@ -1,22 +1,28 @@
+%p
+  Income 
+  %br
+  = @player.gross_national_income(@game.current_round-2)
+%p
+  Emissions
+  %br
+  = @player.residual_emissions(@game.current_round-2)
+
+Mitigation
 = form_for [@player_round.player, @player_round] do |f|
   = f.error_messages
-  %p
-    = f.label :mitigation
-    %br
-    = f.number_field :mitigation
-  %p
-    = f.label :adaptation
-    %br
-    = f.number_field :adaptation
-  %p
-    = f.label :gross_national_income
-    %br
-    = @player.gross_national_income(@game.current_round-2)
-  %p
-    = f.label "Emmissions"
+  = f.hidden_field :mitigation, :value => @player_round.mitigation+1
+  = f.submit '+1' 
+= form_for [@player_round.player, @player_round] do |f|
+  = f.error_messages
+  = f.hidden_field :mitigation, :value => @player_round.mitigation-1
+  = f.submit '-1' 
 
-    %br
-    = @player.residual_emissions(@game.current_round-2)
-
-  %p
-    = f.submit
+Adaptation
+= form_for [@player_round.player, @player_round] do |f|
+  = f.error_messages
+  = f.hidden_field :adaptation, :value => @player_round.adaptation+1
+  = f.submit '+1' 
+= form_for [@player_round.player, @player_round] do |f|
+  = f.error_messages
+  = f.hidden_field :adaptation, :value => @player_round.adaptation-1
+  = f.submit '-1' 
