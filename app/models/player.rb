@@ -1,7 +1,6 @@
 class Player < ActiveRecord::Base
   belongs_to :team
   has_many :player_rounds
-  attr_accessible :name
 
   def round(decade)
     player_rounds[decade]
