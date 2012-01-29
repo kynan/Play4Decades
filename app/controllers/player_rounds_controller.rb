@@ -30,7 +30,7 @@ class PlayerRoundsController < ApplicationController
   def update
     @player_round = PlayerRound.find(params[:id])
     if @player_round.update_attributes(params[:player_round])
-      redirect_to @player_round, :notice  => "Successfully updated player round."
+      redirect_to edit_player_player_round_path(@player_round.player, @player_round), :notice  => "Successfully updated player round."
     else
       render :action => 'edit'
     end
