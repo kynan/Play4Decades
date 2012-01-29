@@ -36,22 +36,22 @@
   = form_for [@player_round.player, @player_round] do |f|
     = f.error_messages
     = f.hidden_field :mitigation, :value => @player_round.mitigation+1
-    = f.submit '+1'
+    = f.submit '+1', :type => :image, :src => path_to_image('invisible_button.png')
 
 %div{:class => "plusminusbutton", :id => "miti-minus"} 
   = form_for [@player_round.player, @player_round] do |f|
     = f.error_messages
     = f.hidden_field :mitigation, :value => @player_round.mitigation-1
-    = f.submit '-1'
+    = f.submit '-1', :type => :image, :src => path_to_image('invisible_button.png')
 
 %div{:class => "plusminusbutton", :id => "adap-plus"} 
   = form_for [@player_round.player, @player_round] do |f|
     = f.error_messages
     = f.hidden_field :adaptation, :value => @player_round.adaptation+1
-    = f.submit '+1'
+    = f.submit '+1', :type => :image, :src => path_to_image('invisible_button.png')
 
 %div{:class => "plusminusbutton", :id => "adap-minus"} 
   = form_for [@player_round.player, @player_round] do |f|
     = f.error_messages
     = f.hidden_field :adaptation, :value => @player_round.adaptation-1
-    = f.submit '-1'
+    = f.submit '-1', :type => :image, :src => path_to_image('invisible_button.png')
