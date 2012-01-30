@@ -46,10 +46,4 @@ class TeamsController < ApplicationController
     @team.destroy
     redirect_to teams_url, :notice => "Successfully destroyed team."
   end
-
-  def join
-    @team = Team.find(params[:id])
-    @player = Player.create(:team => @team)
-    redirect_to stats_player_path(@player), :notice => "Successfully joined team."
-  end
 end
