@@ -7,6 +7,11 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
   end
 
+  def join
+    @player = Player.new
+    @game = Game.find(params['game_id'])
+  end
+
   def new
     @player = Player.new
     @player.team = Team.find(params['team_id'])
@@ -14,7 +19,9 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(params[:player])
-    @player.team = Team.find(params['team_id'])
+    if params['team_id']
+      @player.team = Team.find(params['team_id'])
+    end
     if @player.save
       redirect_to stats_player_path(@player), :notice => "Successfully created player."
     else

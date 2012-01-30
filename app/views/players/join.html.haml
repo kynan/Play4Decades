@@ -1,0 +1,14 @@
+- title "Join team"
+
+= form_for [@game, @player] do |f|
+  = f.error_messages
+  %p
+    = f.label :name, 'Player name'
+    %br
+    = f.text_field :name
+  %p
+    = f.label 'Team'
+    %br
+    = f.select(:team_id, options_from_collection_for_select(@game.teams, :id, :name))
+  %p
+    = f.submit 'Join team'

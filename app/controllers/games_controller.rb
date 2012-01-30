@@ -49,7 +49,7 @@ class GamesController < ApplicationController
     @game = Game.where(:token => params[:token], :state => 'new').first
     # FIXME: check that game isn't full etc.
     if @game
-      redirect_to browse_game_teams_path(@game), :notice  => "Successfully joined game."
+      redirect_to join_game_players_path(@game), :notice  => "Successfully joined game."
     else
       redirect_to join_games_path, :alert => "There is no open game with that id."
     end

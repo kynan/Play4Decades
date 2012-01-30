@@ -17,6 +17,8 @@ Play4Decades::Application.routes.draw do
       end
     end
   end
+  match '/games/:game_id/players/join' => "players#join", :via => :get, :as => :join_game_players
+  match '/games/:game_id/players' => "players#create", :via => :post, :as => :game_players
 
   resources :teams do
     member do
